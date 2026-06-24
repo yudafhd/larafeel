@@ -1,6 +1,6 @@
 <?php
 
-use Yudafhd\LaravelDocs\Http\Middleware\DocsApiMiddleware;
+use Yudafhd\Larafeel\Http\Middleware\LarafeelApiMiddleware;
 
 return [
     /*
@@ -99,7 +99,7 @@ return [
 
     'middleware' => [
         'web',
-        DocsApiMiddleware::class,
+        LarafeelApiMiddleware::class,
     ],
 
     'extensions' => [],

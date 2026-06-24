@@ -614,9 +614,9 @@ function HistoryDrawer({ history, onSelect, onClear }) {
 
 function ApiWorkspace({ specification }) {
     const operations = useMemo(() => getOperations(specification), [specification]);
-    const [selected, setSelected] = useState(operations[0]);
+    const [selected, setSelected] = useState(operations[0] || null);
     const [search, setSearch] = useState('');
-    const [request, setRequest] = useState(() => createInitialRequest(operations[0], getServerUrl(specification)));
+    const [request, setRequest] = useState(() => operations[0] ? createInitialRequest(operations[0], getServerUrl(specification)) : null);
     const [token, setToken] = useState(() => loadStoredValue(storageKeys.token));
     const [response, setResponse] = useState(null);
     const [requestError, setRequestError] = useState(null);
@@ -746,7 +746,7 @@ function ApiWorkspace({ specification }) {
         <main className={`workspace ${sidebarOpen ? '' : 'workspace--sidebar-closed'}`}>
             <Sidebar
                 groups={filteredGroups}
-                selectedId={selected.id}
+                selectedId={selected?.id}
                 onSelect={chooseOperation}
                 search={search}
                 onSearch={setSearch}
@@ -784,16 +784,23 @@ function ApiWorkspace({ specification }) {
                     />
                 </header>
                 <div className="workspace__content">
-                    <RequestPanel
-                        key={selected.id}
-                        operation={selected}
-                        request={request}
-                        onChange={setRequest}
-                        token={token}
-                        onTokenChange={saveToken}
-                        onSend={sendRequest}
-                        sending={sending}
-                    />
+                    {selected ? (
+                        <RequestPanel
+                            key={selected.id}
+                            operation={selected}
+                            request={request}
+                            onChange={setRequest}
+                            token={token}
+                            onTokenChange={saveToken}
+                            onSend={sendRequest}
+                            sending={sending}
+                        />
+                    ) : (
+                        <div className="panel" style={{ padding: '2rem', textAlign: 'center', color: '#888' }}>
+                            <h2>Tidak ada endpoint yang dipilih</h2>
+                            <p>Silakan buat route API di Laravel atau pilih endpoint dari sidebar.</p>
+                        </div>
+                    )}
                     <ResponsePanel response={response} error={requestError} />
                 </div>
             </section>

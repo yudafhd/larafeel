@@ -1,13 +1,13 @@
 <?php
 
-namespace Yudafhd\LaravelDocs\Http\Middleware;
+namespace Yudafhd\Larafeel\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
-class DocsApiMiddleware
+class LarafeelApiMiddleware
 {
     /**
      * Handle an incoming request.

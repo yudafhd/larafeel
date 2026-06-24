@@ -1,6 +1,6 @@
 {
-    "name": "yudafhd/modern-laravel-docs",
-    "description": "A modern and interactive API documentation dashboard for Laravel powered by Scramble and React",
+    "name": "yudafhd/larafeel",
+    "description": "An interactive API documentation dashboard for Laravel powered by Scramble and React",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -16,13 +16,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Yudafhd\\LaravelDocs\\": "src/"
+            "Yudafhd\\Larafeel\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Yudafhd\\LaravelDocs\\DocsServiceProvider"
+                "Yudafhd\\Larafeel\\LarafeelServiceProvider"
             ]
         }
     }
