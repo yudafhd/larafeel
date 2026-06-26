@@ -6,6 +6,16 @@
     color: #17212b;
     background: #f4f7f8;
     font-synthesis: none;
+
+    /* Theme color variables */
+    --primary-color: #ec4899;
+    --primary-hover: #db2777;
+    --primary-active: #be185d;
+    --primary-light: #fdf2f8;
+    --primary-light-border: #fbcfe8;
+
+    --brand-gradient: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+    --brand-title-color: #be185d;
 }
 
 * {
@@ -68,8 +78,11 @@ button {
 }
 
 .brand__title {
-    color: #0b615a;
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 1.75rem;
+    font-weight: 750;
 }
 
 .brand div {
@@ -97,9 +110,9 @@ button {
 }
 
 .sidebar-toggle:hover {
-    color: #0f766e;
-    border-color: #9bcfc9;
-    background: #f1f9f8;
+    color: var(--primary-color);
+    border-color: var(--primary-light-border);
+    background: var(--primary-light);
 }
 
 .sidebar-toggle--close {
@@ -182,7 +195,7 @@ button {
 }
 
 .endpoint-group summary:hover {
-    background: #eef3f3;
+    background: var(--primary-light);
 }
 
 .endpoint-group summary span {
@@ -213,12 +226,12 @@ button {
 }
 
 .endpoint:hover {
-    background: #eef3f3;
+    background: var(--primary-light);
 }
 
 .endpoint--active {
-    color: #0c625b;
-    background: #e3f3f1;
+    color: var(--primary-active);
+    background: var(--primary-light);
 }
 
 .endpoint > span:last-child {
@@ -376,13 +389,13 @@ button {
     border: 0;
     border-radius: 0.45rem;
     color: #fff;
-    background: #0f766e;
+    background: var(--primary-color);
     font-size: 0.78rem;
     font-weight: 750;
 }
 
 .url-bar > button:hover {
-    background: #0b625b;
+    background: var(--primary-hover);
 }
 
 .url-bar > button:disabled {
@@ -411,8 +424,8 @@ button {
 }
 
 .tabs .tab--active {
-    color: #0d6c64;
-    border-bottom-color: #0f766e;
+    color: var(--primary-hover);
+    border-bottom-color: var(--primary-color);
     font-weight: 750;
 }
 
@@ -471,7 +484,7 @@ button {
     place-self: center;
     width: 0.9rem;
     height: 0.9rem;
-    accent-color: #0f766e;
+    accent-color: var(--primary-color);
 }
 
 .kv-row > div {
@@ -527,7 +540,7 @@ button {
     padding: 0.55rem;
     border: 0;
     border-top: 1px solid #e8edef;
-    color: #0f766e;
+    color: var(--primary-color);
     background: #fbfdfd;
     text-align: left;
     font-size: 0.7rem;
@@ -655,10 +668,10 @@ button {
     display: grid;
     place-items: center;
     margin: 0 auto 0.8rem;
-    border: 1px solid #d7e1e3;
+    border: 1px solid var(--primary-light-border);
     border-radius: 0.75rem;
-    color: #0f766e;
-    background: #f4faf9;
+    color: var(--primary-color);
+    background: var(--primary-light);
     font-size: 1.2rem;
 }
 
@@ -838,7 +851,7 @@ button {
 }
 
 .response-headers code {
-    color: #0f766e;
+    color: var(--primary-color);
 }
 
 .response-headers span {
@@ -869,8 +882,8 @@ button {
     height: 1.15rem;
     padding: 0 0.25rem;
     border-radius: 999px;
-    color: #0f766e;
-    background: #e3f3f1;
+    color: var(--primary-color);
+    background: var(--primary-light);
     font-size: 0.6rem;
 }
 
@@ -1026,7 +1039,7 @@ button {
 
 .docs-error section p {
     margin: 0;
-    color: #0f766e;
+    color: var(--primary-color);
     font-size: 0.68rem;
     font-weight: 800;
     letter-spacing: 0.1em;
@@ -1049,7 +1062,7 @@ button {
     border: 0;
     border-radius: 0.45rem;
     color: #fff;
-    background: #0f766e;
+    background: var(--primary-color);
     font-size: 0.75rem;
 }
 
@@ -1147,7 +1160,7 @@ button {
 }
 
 .segmented-control button.active {
-    color: #0f766e;
+    color: var(--primary-color);
     background: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
@@ -1167,9 +1180,9 @@ button {
 }
 
 .theme-toggle:hover {
-    color: #0f766e;
-    border-color: #0f766e;
-    background: #f4faf9;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: var(--primary-light);
 }
 
 /* Larafeel JSON Preview Custom Theme (Light Mode default) */
@@ -1276,6 +1289,16 @@ button {
     color-scheme: dark;
     color: #e4e4e7;
     background: #09090b;
+
+    /* Theme color variables - Dark overrides */
+    --primary-color: #f472b6;
+    --primary-hover: #ec4899;
+    --primary-active: #db2777;
+    --primary-light: #4c0519;
+    --primary-light-border: #9d174d;
+
+    --brand-gradient: linear-gradient(135deg, #f472b6 0%, #a78bfa 100%);
+    --brand-title-color: #f472b6;
 }
 
 .dark .workspace {
@@ -1291,9 +1314,6 @@ button {
     border-bottom: 1px solid #27272a;
 }
 
-.dark .brand__title {
-    color: #2dd4bf;
-}
 
 .dark .brand span {
     color: #a1a1aa;
@@ -1305,7 +1325,7 @@ button {
 }
 
 .dark .sidebar-toggle--close:hover {
-    color: #2dd4bf;
+    color: var(--primary-color);
     background: #27272a;
 }
 
@@ -1349,8 +1369,8 @@ button {
 }
 
 .dark .endpoint--active {
-    color: #2dd4bf;
-    background: #134e4a;
+    color: var(--primary-color);
+    background: var(--primary-light);
 }
 
 .dark .topbar {
@@ -1368,7 +1388,7 @@ button {
 }
 
 .dark .sidebar-toggle--open:hover {
-    color: #2dd4bf;
+    color: var(--primary-color);
     background: #27272a;
 }
 
@@ -1404,11 +1424,11 @@ button {
 }
 
 .dark .url-bar > button {
-    background: #0d9488;
+    background: var(--primary-color);
 }
 
 .dark .url-bar > button:hover {
-    background: #0f766e;
+    background: var(--primary-hover);
 }
 
 .dark .tabs {
@@ -1424,8 +1444,8 @@ button {
 }
 
 .dark .tabs .tab--active {
-    color: #2dd4bf;
-    border-bottom-color: #2dd4bf;
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
 }
 
 .dark .editor-section h2 {
@@ -1476,7 +1496,7 @@ button {
 .dark .add-row {
     border-top: 1px solid #27272a;
     background: #121214;
-    color: #2dd4bf;
+    color: var(--primary-color);
 }
 
 .dark .add-row:hover {
@@ -1510,8 +1530,8 @@ button {
 
 .dark .content-type-badge-value {
     background: #121214;
-    color: #2dd4bf;
-    border: 1px solid #134e4a;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-light-border);
 }
 
 .dark .body-editor__toolbar button {
@@ -1551,9 +1571,9 @@ button {
 }
 
 .dark .theme-toggle:hover {
-    color: #2dd4bf;
-    border-color: #2dd4bf;
-    background: #134e4a;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: var(--primary-light);
 }
 
 .dark .history > button {
@@ -1563,14 +1583,14 @@ button {
 }
 
 .dark .history > button:hover {
-    color: #2dd4bf;
-    border-color: #2dd4bf;
-    background: #134e4a;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: var(--primary-light);
 }
 
 .dark .history > button span {
-    background: #134e4a;
-    color: #2dd4bf;
+    background: var(--primary-light);
+    color: var(--primary-color);
 }
 
 .dark .history__menu {
@@ -1714,7 +1734,7 @@ button {
 }
 
 .dark input[type="checkbox"] {
-    accent-color: #2dd4bf;
+    accent-color: var(--primary-color);
 }
 
 /* Method Badges Dark Mode */
@@ -1729,9 +1749,9 @@ button {
 /* Response Placeholder & Empty State */
 .dark .response-placeholder > span {
     border-color: #27272a;
-    color: #2dd4bf;
-    background: #115e59;
-    box-shadow: 0 0 0 0.25rem rgba(13, 148, 136, 0.15);
+    color: var(--primary-color);
+    background: var(--primary-light);
+    box-shadow: 0 0 0 0.25rem rgba(244, 114, 182, 0.15);
 }
 .dark .response-placeholder h2 {
     color: #f4f4f5;
@@ -1769,14 +1789,14 @@ button {
 .dark textarea:focus,
 .dark .search:focus-within,
 .dark .kv-row input:not([type="checkbox"]):focus {
-    border-color: #2dd4bf !important;
-    box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.15) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 2px rgba(244, 114, 182, 0.15) !important;
     outline: none;
 }
 
 .dark .url-bar:focus-within {
-    border-color: #2dd4bf !important;
-    box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.15) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 2px rgba(244, 114, 182, 0.15) !important;
 }
 
 /* Custom Scrollbars for Premium Look */
@@ -1811,19 +1831,19 @@ button {
 }
 
 .snippet-toggle:hover {
-    border-color: #0f766e;
-    color: #0f766e;
-    background: #f0fdfa;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: var(--primary-light);
 }
 
 .snippet-toggle--active {
-    background: #0f766e;
+    background: var(--primary-color);
     color: #fff;
-    border-color: #0f766e;
+    border-color: var(--primary-color);
 }
 
 .snippet-toggle--active:hover {
-    background: #0d6c64;
+    background: var(--primary-hover);
     color: #fff;
 }
 
@@ -1890,19 +1910,19 @@ button {
 }
 
 .dark .snippet-toggle:hover {
-    color: #2dd4bf;
-    border-color: #2dd4bf;
-    background: #134e4a;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: var(--primary-light);
 }
 
 .dark .snippet-toggle--active {
-    background: #0d9488;
+    background: var(--primary-color);
     color: #fff;
-    border-color: #0d9488;
+    border-color: var(--primary-color);
 }
 
 .dark .snippet-toggle--active:hover {
-    background: #0f766e;
+    background: var(--primary-hover);
 }
 
 .dark .snippet-box {
@@ -1924,8 +1944,8 @@ button {
 
 .dark .snippet-box__header select:focus,
 .dark .snippet-box__header button:hover {
-    border-color: #2dd4bf;
-    color: #2dd4bf;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .dark .snippet-box__code {
@@ -2147,9 +2167,9 @@ button {
 }
 
 .variables-btn:hover {
-    color: #0f766e;
-    border-color: #0f766e;
-    background: #f0fdfa;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: var(--primary-light);
 }
 
 .dark .variables-btn {
@@ -2252,12 +2272,12 @@ button {
     border-radius: 0.25rem;
     font-family: monospace;
     font-size: 0.7rem;
-    color: #0f766e;
+    color: var(--primary-color);
 }
 
 .dark .env-modal__help code {
     background: #172329;
-    color: #2dd4bf;
+    color: var(--primary-color);
 }
 
 .env-vars-list {
@@ -2356,12 +2376,13 @@ button {
 }
 
 .env-vars-add {
+    display: block;
     width: 100%;
     padding: 0.6rem;
     border: 1px dashed #cbd5e1;
     border-radius: 0.5rem;
     background: #fff;
-    color: #0f766e;
+    color: var(--primary-color);
     font-size: 0.75rem;
     font-weight: 600;
     cursor: pointer;
@@ -2370,19 +2391,19 @@ button {
 }
 
 .env-vars-add:hover {
-    background: #f0fdfa;
-    border-color: #0f766e;
+    background: var(--primary-light);
+    border-color: var(--primary-color);
 }
 
 .dark .env-vars-add {
     background: #1d2d34;
     border-color: #405159;
-    color: #2dd4bf;
+    color: var(--primary-color);
 }
 
 .dark .env-vars-add:hover {
     background: #284047;
-    border-color: #2dd4bf;
+    border-color: var(--primary-color);
 }
 
 .env-modal__footer {
@@ -2431,20 +2452,20 @@ button {
 }
 
 .env-modal-btn--primary {
-    background: #0f766e;
+    background: var(--primary-color);
     color: #fff;
 }
 
 .env-modal-btn--primary:hover {
-    background: #0d6c64;
+    background: var(--primary-hover);
 }
 
 .dark .env-modal-btn--primary {
-    background: #0d9488;
+    background: var(--primary-color);
 }
 
 .dark .env-modal-btn--primary:hover {
-    background: #0f766e;
+    background: var(--primary-hover);
 }
 
 /* ==========================================================================
@@ -2491,13 +2512,13 @@ button {
 .auth-basic-fields input:focus,
 .auth-apikey-fields input:focus,
 .auth-apikey-fields select:focus {
-    border-color: #0f766e;
+    border-color: var(--primary-color);
 }
 
 .dark .auth-basic-fields input:focus,
 .dark .auth-apikey-fields input:focus,
 .dark .auth-apikey-fields select:focus {
-    border-color: #2dd4bf;
+    border-color: var(--primary-color);
 }
 
 
